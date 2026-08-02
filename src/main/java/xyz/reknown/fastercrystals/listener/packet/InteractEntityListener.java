@@ -66,6 +66,7 @@ public class InteractEntityListener extends SimplePacketListenerAbstract {
         if (packet.getAction() != WrapperPlayClientInteractEntity.InteractAction.INTERACT_AT) return;
 
         Player player = event.getPlayer();
+        if (player == null) return;
         if (player.getGameMode() == GameMode.SPECTATOR) return;
 
         CUser cUser = userRepository.get(player);
