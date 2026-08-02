@@ -67,6 +67,7 @@ public class AnimationListener extends SimplePacketListenerAbstract {
         if (event.isCancelled()) return;
 
         final Player player = event.getPlayer();
+        if (player == null) return;
         final CUser cUser = plugin.getUserRepository().get(player);
 
         if (player.getGameMode() == GameMode.SPECTATOR) return;
